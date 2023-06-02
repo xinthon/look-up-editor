@@ -14,43 +14,60 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Margin="0,10" FontWeight="Bold">Look up editor</TextBlock>
             <TextBlock Margin="0,10">Select item</TextBlock>
-            <!--<dxg:LookUpEdit
-                Margin="0,10"
-                Width="500"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Top"
-                AutoComplete="True"
-                AutoPopulateColumns="False"
-                DisplayMember="ProductName"
-                ImmediatePopup="True"
-                IncrementalFiltering="True"
-                IsPopupAutoWidth="False"
-                ItemsSource="{Binding Products, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                ValueMember="Id">
-                <dxg:LookUpEdit.PopupContentTemplate>
-                    <ControlTemplate>
-                        <dxg:GridControl ItemsSource="{Binding Products, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                            <dxg:GridControl.Columns>
-                                <dxg:GridColumn FieldName="ProductName" />
-                                <dxg:GridColumn FieldName="UnitPrice" />
-                                <dxg:GridColumn FieldName="Quantity" />
-                            </dxg:GridControl.Columns>
-                            <dxg:GridControl.View>
-                                <dxg:TableView AutoWidth="True" SearchColumns="ProductName"/>
-                            </dxg:GridControl.View>
-                        </dxg:GridControl>
-                    </ControlTemplate>
-                </dxg:LookUpEdit.PopupContentTemplate>
-            </dxg:LookUpEdit>-->
-
             <dxg:LookUpEdit
                 Width="500"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 DisplayMember="ProductName"
                 ItemsSource="{Binding Products}"
-                ValueMember="ID" />
-        </StackPanel>
+                ValueMember="ID">
+                <dxg:LookUpEdit.StyleSettings>
+                    <dxg:LookUpEditStyleSettings AllowGrouping="False" />
+                </dxg:LookUpEdit.StyleSettings>
+            </dxg:LookUpEdit>
 
+            <TextBlock Margin="0,10" FontWeight="Bold">Look up editor seach</TextBlock>
+            <TextBlock Margin="0,10">Select item</TextBlock>
+            <dxg:LookUpEdit
+                Width="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMember="ProductName"
+                ItemsSource="{Binding Products}"
+                ValueMember="ID">
+                <dxg:LookUpEdit.StyleSettings>
+                    <dxg:SearchLookUpEditStyleSettings AllowGrouping="False" />
+                </dxg:LookUpEdit.StyleSettings>
+            </dxg:LookUpEdit>
+
+            <TextBlock Margin="0,10" FontWeight="Bold">Look up editor token</TextBlock>
+            <TextBlock Margin="0,10">Select item</TextBlock>
+            <dxg:LookUpEdit
+                Width="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMember="ProductName"
+                ItemsSource="{Binding Products}"
+                ValueMember="ID">
+                <dxg:LookUpEdit.StyleSettings>
+                    <!--<dxg:SearchLookUpEditStyleSettings AllowGrouping="False"/>-->
+                    <dxg:TokenLookUpEditStyleSettings AllowGrouping="False" />
+                </dxg:LookUpEdit.StyleSettings>
+            </dxg:LookUpEdit>
+            <TextBlock Margin="0,10" FontWeight="Bold">Look up editor search token</TextBlock>
+            <TextBlock Margin="0,10">Select item</TextBlock>
+            <dxg:LookUpEdit
+                Width="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMember="ProductName"
+                ItemsSource="{Binding Products}"
+                ValueMember="ID">
+                <dxg:LookUpEdit.StyleSettings>
+                    <!--<dxg:SearchLookUpEditStyleSettings AllowGrouping="False"/>-->
+                    <dxg:SearchTokenLookUpEditStyleSettings AllowGrouping="False" />
+                </dxg:LookUpEdit.StyleSettings>
+            </dxg:LookUpEdit>
+        </StackPanel>
     </Grid>
 </Window>
