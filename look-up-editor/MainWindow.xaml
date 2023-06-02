@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="look_up_editor.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:local="clr-namespace:look_up_editor"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d"
+    Title="MainWindow">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Margin="0,10" FontWeight="Bold">Look up editor</TextBlock>
+            <TextBlock Margin="0,10">Select item</TextBlock>
+            <!--<dxg:LookUpEdit
+                Margin="0,10"
+                Width="500"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                AutoComplete="True"
+                AutoPopulateColumns="False"
+                DisplayMember="ProductName"
+                ImmediatePopup="True"
+                IncrementalFiltering="True"
+                IsPopupAutoWidth="False"
+                ItemsSource="{Binding Products, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                ValueMember="Id">
+                <dxg:LookUpEdit.PopupContentTemplate>
+                    <ControlTemplate>
+                        <dxg:GridControl ItemsSource="{Binding Products, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <dxg:GridControl.Columns>
+                                <dxg:GridColumn FieldName="ProductName" />
+                                <dxg:GridColumn FieldName="UnitPrice" />
+                                <dxg:GridColumn FieldName="Quantity" />
+                            </dxg:GridControl.Columns>
+                            <dxg:GridControl.View>
+                                <dxg:TableView AutoWidth="True" SearchColumns="ProductName"/>
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </ControlTemplate>
+                </dxg:LookUpEdit.PopupContentTemplate>
+            </dxg:LookUpEdit>-->
+
+            <dxg:LookUpEdit
+                Width="500"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                DisplayMember="ProductName"
+                ItemsSource="{Binding Products}"
+                ValueMember="ID" />
+        </StackPanel>
+
+    </Grid>
+</Window>
