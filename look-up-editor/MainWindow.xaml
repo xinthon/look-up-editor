@@ -20,7 +20,7 @@
                 VerticalAlignment="Top"
                 DisplayMember="ProductName"
                 ItemsSource="{Binding Products}"
-                ValueMember="ID">
+                EditValue="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <dxg:LookUpEdit.StyleSettings>
                     <dxg:LookUpEditStyleSettings AllowGrouping="False" />
                 </dxg:LookUpEdit.StyleSettings>
@@ -34,7 +34,7 @@
                 VerticalAlignment="Top"
                 DisplayMember="ProductName"
                 ItemsSource="{Binding Products}"
-                ValueMember="ID">
+                EditValue="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <dxg:LookUpEdit.StyleSettings>
                     <dxg:SearchLookUpEditStyleSettings AllowGrouping="False" />
                 </dxg:LookUpEdit.StyleSettings>
@@ -48,7 +48,7 @@
                 VerticalAlignment="Top"
                 DisplayMember="ProductName"
                 ItemsSource="{Binding Products}"
-                ValueMember="ID">
+                EditValue="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <dxg:LookUpEdit.StyleSettings>
                     <!--<dxg:SearchLookUpEditStyleSettings AllowGrouping="False"/>-->
                     <dxg:TokenLookUpEditStyleSettings AllowGrouping="False" />
@@ -62,12 +62,14 @@
                 VerticalAlignment="Top"
                 DisplayMember="ProductName"
                 ItemsSource="{Binding Products}"
-                ValueMember="ID">
+                EditValue="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <dxg:LookUpEdit.StyleSettings>
                     <!--<dxg:SearchLookUpEditStyleSettings AllowGrouping="False"/>-->
                     <dxg:SearchTokenLookUpEditStyleSettings AllowGrouping="False" />
                 </dxg:LookUpEdit.StyleSettings>
             </dxg:LookUpEdit>
+
+            <Button Margin="0, 40 ,0 ,0" Command="{Binding command}">Show Selected Item</Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -31,6 +31,15 @@ namespace look_up_editor
             this.DataContext = this;
 
             Products = new Data();
+
+            command = new RelayCommand(OnClickAction);
+        }
+
+        public ICommand command { get; }
+
+        private void OnClickAction(object? sender)
+        {
+            MessageBox.Show($"Product ID : {this.SelectedItem?.ID}, Product Name : {this.SelectedItem?.ProductName}");
         }
 
         public ObservableCollection<Product>? products { get; set; }
@@ -44,13 +53,42 @@ namespace look_up_editor
             }
         }
 
+        private Product? selectedItem { get; set; }
+        public Product? SelectedItem {
+            get => selectedItem;
+            set
+            {
+                selectedItem = value;
+                NotifyPropertyChanged(nameof(SelectedItem));
+            }
+        }
 
-        
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+
+    public class RelayCommand : ICommand
+    {
+        private Action<object?>? action { get; set; }
+        public RelayCommand(Action<object?>? action) 
+        { 
+            this.action = action;
+        }
+
+        public event EventHandler? CanExecuteChanged;
+
+        public bool CanExecute(object? parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object? parameter)
+        {
+            this.action?.Invoke(parameter);
         }
     }
 }
